@@ -10,12 +10,22 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.core.view.WindowCompat
 import com.futurewei.hmsadappfly.ui.theme.HmsAdAppflyTheme
+//import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        WindowCompat.setDecorFitsSystemWindows(window,false)
+        val appContainer = (application as HmsAdNAppflyApp).container
+
         setContent {
+
+//            val widthsizeClass = calculateWindowSizeClass(this).widthSizeClass
+
             HmsAdAppflyTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
